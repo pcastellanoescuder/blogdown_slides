@@ -1,0 +1,86 @@
+---
+title: "blogdown"
+subtitle: "Creating Websites with R Markdown"
+author: "Pol Castellano-Escuder"
+date: "Jun 26, 2019"
+output:
+  xaringan::moon_reader:
+    css: ["mycss.css"]
+    lib_dir: libs
+    nature:
+      highlightStyle: github
+      highlightLines: true 
+      countIncrementalSlides: false
+    yolo: false
+---
+
+layout: true
+
+<div class="my-footer"></div>  
+
+```{r setup, include = FALSE}
+knitr::opts_chunk$set(dpi = 250, fig.height = 5, fig.width = 9, fig.align = 'center', cache = TRUE, eval = FALSE)
+```
+
+---
+
+class: inverse, center, middle
+
+# _"If you don’t have a website nowadays, you don’t exist"_
+
+---
+
+# Introduction
+
+.pull-left[
+
+<img src="pix/book.jpg" width="300" class="centerimg">
+
+]
+
+.pill-right[
+
+## Authors:
+
+_**Yihui Xie**, Amber Thomas, Alison Presmanes Hill_
+
+]
+
+---
+
+# Two main ideas:
+
+  1. It produces a static website, meaning the website only consists of static files such as HTML, CSS, JavaScript, and images, etc. You can host the website on any web server (see Chapter 3 for details). The website does not require server-side scripts such as PHP or databases like WordPress does. It is just one folder of static files. We will explain more benefits of static websites in Chapter 2, when we introduce the static website generator Hugo.
+
+  2. The website is generated from R Markdown documents (R is optional, i.e., you can use plain Markdown documents without R code chunks). This brings a huge amount of benefits, especially if your website is related to data analysis or (R) programming. Being able to use Markdown implies simplicity and more importantly, portability (e.g., you are giving yourself the chance to convert your blog posts to PDF and publish to journals or even books in the future). R Markdown gives you the benefits of dynamic documents — all your results, such as tables, graphics, and inline values, can be computed and rendered dynamically from R code, hence the results you present on your website are more likely to be reproducible. An additional yet important benefit of using R Markdown is that you will be able to write technical documents easily, due to the fact that blogdown inherits the HTML output format from bookdown (Xie 2016). For example, it is possible to write LaTeX math equations, BibTeX citations, and even theorems and proofs if you want.
+
+---
+
+# Hugo
+
+---
+
+# Installation
+
+```{r}
+## Install from CRAN
+install.packages("blogdown")
+## Or, install from GitHub
+if (!requireNamespace("devtools")) install.packages("devtools")
+devtools::install_github("rstudio/blogdown")
+
+
+
+
+# for example, create a new site with the academic theme
+blogdown::new_site(theme = "gcushen/hugo-academic")
+```
+
+---
+
+# Themes
+
+---
+
+# Deployment
+

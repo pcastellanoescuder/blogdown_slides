@@ -2,16 +2,15 @@
 title: "blogdown"
 subtitle: "Creating Websites with R Markdown"
 author: "Pol Castellano-Escuder"
-date: "Jun 26, 2019"
+date: "2019/06/26 @ GRBIO Students' Seminar"
 output:
   xaringan::moon_reader:
-    css: ["mycss.css"]
+    #css: ["mycss.css"]
     lib_dir: libs
     nature:
       highlightStyle: github
       highlightLines: true 
       countIncrementalSlides: false
-    yolo: false
 ---
 
 layout: true
@@ -24,17 +23,13 @@ knitr::opts_chunk$set(dpi = 250, fig.height = 5, fig.width = 9, fig.align = 'cen
 
 ---
 
-class: inverse, center, middle
-
-# _"If you don’t have a website nowadays, you don’t exist"_
-
----
-
 # Introduction
+
+This presentation is completely based on the **Yihui Xie** book <a href="https://bookdown.org/yihui/blogdown/" target="_blank"><i>"blogdown: Creating Websites with R Markdown"</i></a> and his RStudio <a href="https://slides.yihui.name/2017-rstudio-webinar-blogdown-Yihui-Xie.html" target="_blank">materials</a>.
 
 .pull-left[
 
-<img src="pix/book.jpg" width="300" class="centerimg">
+<img src="pix/book.jpg" width="250" class="centerimg">
 
 ]
 
@@ -83,4 +78,10 @@ blogdown::new_site(theme = "gcushen/hugo-academic")
 ---
 
 # Deployment
+
+---
+
+class: inverse, center, middle
+
+# _"If you don’t have a website nowadays, you don’t exist"_
 

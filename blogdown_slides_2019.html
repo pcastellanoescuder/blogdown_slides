@@ -27,9 +27,21 @@ layout: true
 
 ---
 
-# Introduction
+layout: false
 
-This presentation is completely based on the **Yihui Xie** book &lt;a href="https://bookdown.org/yihui/blogdown/" target="_blank"&gt;&lt;i&gt;"blogdown: Creating Websites with R Markdown"&lt;/i&gt;&lt;/a&gt; and his RStudio &lt;a href="https://slides.yihui.name/2017-rstudio-webinar-blogdown-Yihui-Xie.html" target="_blank"&gt;materials&lt;/a&gt;.
+class: inverse, center, middle
+
+# INTRODUCTION
+
+&lt;html&gt;&lt;div style='float:left'&gt;&lt;/div&gt;&lt;hr color='#EB811B' size=1px width=720px&gt;&lt;/html&gt; 
+
+---
+
+class: center
+
+# About blogdown...
+
+This presentation is completely based on the **Yihui Xie** book &lt;a href="https://bookdown.org/yihui/blogdown/" target="_blank"&gt;&lt;i&gt;"blogdown: Creating Websites with R Markdown"&lt;/i&gt;&lt;/a&gt;, his RStudio &lt;a href="https://slides.yihui.name/2017-rstudio-webinar-blogdown-Yihui-Xie.html" target="_blank"&gt;materials&lt;/a&gt; and Alison Presmanes &lt;a href="https://alison.rbind.io/slides/blogdown-workshop-slides.html" target="_blank"&gt;materials&lt;/a&gt;.
 
 .pull-left[
 
@@ -43,52 +55,178 @@ This presentation is completely based on the **Yihui Xie** book &lt;a href="http
 
 _**Yihui Xie**, Amber Thomas, Alison Presmanes Hill_
 
+_"The three authors have never met each other. Hopefully, you can better see why you should have a website now."_
+
 ]
 
 ---
 
-# Two main ideas:
+class: center
 
-  1. It produces a static website, meaning the website only consists of static files such as HTML, CSS, JavaScript, and images, etc. You can host the website on any web server (see Chapter 3 for details). The website does not require server-side scripts such as PHP or databases like WordPress does. It is just one folder of static files. We will explain more benefits of static websites in Chapter 2, when we introduce the static website generator Hugo.
+# What's blogdown?
 
-  2. The website is generated from R Markdown documents (R is optional, i.e., you can use plain Markdown documents without R code chunks). This brings a huge amount of benefits, especially if your website is related to data analysis or (R) programming. Being able to use Markdown implies simplicity and more importantly, portability (e.g., you are giving yourself the chance to convert your blog posts to PDF and publish to journals or even books in the future). R Markdown gives you the benefits of dynamic documents — all your results, such as tables, graphics, and inline values, can be computed and rendered dynamically from R code, hence the results you present on your website are more likely to be reproducible. An additional yet important benefit of using R Markdown is that you will be able to write technical documents easily, due to the fact that blogdown inherits the HTML output format from bookdown (Xie 2016). For example, it is possible to write LaTeX math equations, BibTeX citations, and even theorems and proofs if you want.
+## An R package for creating websites using RMarkdown and Hugo
 
+### &lt;u&gt;RMarkdown:&lt;/u&gt; writing documents portable and reproducible with R
+### &lt;u&gt;Hugo:&lt;/u&gt; Is the static site generator on which blogdown is based. It's free, open-source and general-purpose (not only for blogs)
+  
+&lt;img src="pix/rmd_hugo.png" width="250"&gt;
+  
 ---
 
-# Hugo
+layout: false
+
+class: inverse, center, middle
+
+# GET STARTED
+
+&lt;html&gt;&lt;div style='float:left'&gt;&lt;/div&gt;&lt;hr color='#EB811B' size=1px width=720px&gt;&lt;/html&gt; 
 
 ---
 
 # Installation
 
+## 1. blogdown installation
+
 
 ```r
 ## Install from CRAN
 install.packages("blogdown")
+
 ## Or, install from GitHub
 if (!requireNamespace("devtools")) install.packages("devtools")
 devtools::install_github("rstudio/blogdown")
+```
+
+## 2. Hugo installation using blogdown
 
 
+```r
+blogdown::install_hugo()
+
+## To update Hugo use
+# blogdown::update_hugo() 
+```
+
+---
+
+# Create your own website
+
+## 1. From the RStudio menu: "File -&gt; New Project -&gt; New Directory"
+
+&lt;img src="pix/first.png" width="360"&gt; &lt;img src="pix/second.png" width="360"&gt;
+
+---
+
+# Create your own website
+
+## 2. From console (I always prefer this option)
 
 
+```r
+## Create site with default theme 
+blogdown::new_site()
+```
+
+--
+
+# Themes
+
+You can find a theme in &lt;a href="https://themes.gohugo.io/" target="_blank"&gt;https://themes.gohugo.io/&lt;/a&gt;
+
+
+```r
 # for example, create a new site with the academic theme
 blogdown::new_site(theme = "gcushen/hugo-academic")
 ```
 
 ---
 
-# Themes
+# Useful advices/comments from Yihui about themes...
+
+  - "You will naturually have strong desire for fancier themes, but I recommend you to try simpler themes in the beginning"
+
+  - "Spend more time on creating the content"
+
+  - "You will be tired of your theme someday, no matter how good it looks for now"
+
+---
+class: center
+
+# Congrats! You already have a website!
+
+## Your website directory should look like this ...
+
+&lt;img src="pix/folder_overview.png" width="500"&gt;
 
 ---
 
-# Deployment
+# View your website
+
+## 1. From console
+
+
+```r
+blogdown::serve_site()
+```
+
+## 2. From RStudio _Addin_
+
+&lt;img src="pix/addin.png" width="500"&gt;
+
+---
+
+layout: false
+
+class: inverse, center, middle
+
+# EDIT YOUR WEBSITE
+
+&lt;html&gt;&lt;div style='float:left'&gt;&lt;/div&gt;&lt;hr color='#EB811B' size=1px width=720px&gt;&lt;/html&gt; 
+
+---
+
+layout: false
+
+class: inverse, center, middle
+
+# DEPLOYMENT
+
+&lt;html&gt;&lt;div style='float:left'&gt;&lt;/div&gt;&lt;hr color='#EB811B' size=1px width=720px&gt;&lt;/html&gt; 
+
+---
+
+# There are many options but I will only comment two of them
+
+--
+
+## 1. &lt;a href="https://www.netlify.com/"&gt;Netfly&lt;/a&gt; (strongly recommended by the authors)
+
+  - Netlify is the new and much more flexible Github Pages 
+  - Netlify allows you to quickly publish a website by uploading the **public/** folder through its web interface
+  - Good for those websites that are not updated frequently (or at all)
+
+--
+
+## 2. &lt;a href="https://pages.github.com/"&gt;Github Pages&lt;/a&gt;
+
+  - Could be a nightmare
+  - Really helpful &lt;a href="https://gohugo.io/hosting-and-deployment/hosting-on-github/#step-by-step-instructions"&gt;tutorial&lt;/a&gt; (require some terminal skills)
+  - I'm not sure why, but &lt;a href="https://pcastellanoescuder.github.io/"&gt;my blogdown page&lt;/a&gt; is hosted on Github Pages
 
 ---
 
 class: inverse, center, middle
 
-# _"If you don’t have a website nowadays, you don’t exist"_
+# Thank you all!
+
+&lt;a href="mailto:polcaes@gmail.com"&gt;&amp;nbsp; polcaes@gmail.com&lt;/a&gt;&lt;br&gt;
+&lt;a href="https://pcastellanoescuder.github.io/"&gt;&amp;nbsp; https://pcastellanoescuder.github.io/&lt;/a&gt;&lt;br&gt;
+&lt;a href="http://twitter.com/polcastellano_"&gt;&amp;nbsp; Twitter: @polcastellano_&lt;/a&gt;&lt;br&gt;
+&lt;a href="http://github.com/pcastellanoescuder"&gt;&amp;nbsp; Github: @pcastellanoescuder&lt;/a&gt;
+&lt;br&gt;
+&lt;br&gt;
+&lt;a href="https://grbio.upc.edu/en"&gt;GRBIO Research Group&lt;/a&gt;
     </textarea>
 <style data-target="print-only">@media screen {.remark-slide-container{display:block;}.remark-slide-scaler{box-shadow:none;}}</style>
 <script src="https://remarkjs.com/downloads/remark-latest.min.js"></script>

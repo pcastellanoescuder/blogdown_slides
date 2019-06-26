@@ -132,6 +132,8 @@ You can find a theme in <a href="https://themes.gohugo.io/" target="_blank">http
 blogdown::new_site(theme = "gcushen/hugo-academic")
 ```
 
+**Always is recomended to create a new RStudio project before type this code!**
+
 ---
 
 # Useful advices/comments from Yihui about themes...
@@ -177,6 +179,43 @@ class: inverse, center, middle
 
 ---
 
+# Start to customize your website
+
+The `config.toml` is the first file that you should modify. It contains the "main"<sup>1</sup> options/parameters in the theme
+
+.footnote[
+[1] depends on what you want for your website...
+]
+
+--
+
+  - You can go to the documentation of the theme (often README page of the GitHub repository)
+  - **Not all options can be changed**. The options in `config.toml` depends on each theme
+  - If you want to modify some parameter in your theme that is not in `config.toml`, don't worry!
+    - You can explore and modify files in the `themes/<YOUR THEME>/` and `static/` folders
+    
+---
+
+# Change your logo
+
+The logo file belongs in the `static/images/` directory -> change current logo for your new logo!
+
+_"`static/` stores all the static content for your future website: images, CSS, JavaScript, etc. When Hugo builds your site, all assets inside your static directory are copied over as-is."_
+
+---
+
+# Edit the CONTENT in your website
+
+_"The folder `content/` stores all content for your website... Each top-level folder in Hugo is considered a content section. For example, if your site has two main sections—blog posts and your about page— you will have 1 directory at `content/post/` and 1 file `content/about.md`"_
+
+--
+
+Here is where **RMarkdown** can play an important role!
+
+  - All this documents/posts could be written in plain markdown or in RMarkdown (to generate plots, write code, etc. in R)
+
+---
+
 layout: false
 
 class: inverse, center, middle
@@ -194,7 +233,7 @@ class: inverse, center, middle
 ## 1. <a href="https://www.netlify.com/">Netfly</a> (strongly recommended by the authors)
 
   - Netlify is the new and much more flexible Github Pages 
-  - Netlify allows you to quickly publish a website by uploading the **public/** folder through its web interface
+  - Netlify allows you to quickly publish a website by uploading the `public/` folder through its web interface
   - Good for those websites that are not updated frequently (or at all)
 
 --
